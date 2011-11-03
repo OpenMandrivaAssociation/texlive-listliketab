@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/listliketab
+# catalog-date 2006-12-08 20:57:43 +0100
+# catalog-license lppl
+# catalog-version undef
 Name:		texlive-listliketab
 Version:	20061208
 Release:	1
@@ -45,6 +51,7 @@ the user can add additional columns to each entry in the list.
 #- source
 %doc %{_texmfdistdir}/source/latex/listliketab/listliketab.dtx
 %doc %{_texmfdistdir}/source/latex/listliketab/listliketab.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -55,3 +62,5 @@ the user can add additional columns to each entry in the list.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
