@@ -51,3 +51,17 @@ the user can add additional columns to each entry in the list.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20061208-2
++ Revision: 753399
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20061208-1
++ Revision: 718869
+- texlive-listliketab
+- texlive-listliketab
+- texlive-listliketab
+- texlive-listliketab
+
