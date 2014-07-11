@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-listliketab
 Version:	20061208
-Release:	7
+Release:	8
 Summary:	Typeset lists as tables
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/listliketab
