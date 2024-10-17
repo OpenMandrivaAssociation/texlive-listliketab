@@ -3,7 +3,7 @@ Version:	15878
 Release:	2
 Summary:	Typeset lists as tables
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/listliketab
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/listliketab
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/listliketab.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/listliketab.doc.r%{version}.tar.xz
