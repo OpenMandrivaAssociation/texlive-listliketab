@@ -1,48 +1,23 @@
-Name:		texlive-listliketab
-Version:	15878
-Release:	2
+%global tl_name listliketab
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	Typeset lists as tables
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/listliketab
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/listliketab.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/listliketab.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/listliketab.source.r%{version}.tar.xz
+License:	lppl1.2
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/listliketab.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/listliketab.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/listliketab.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The listliketab package helps the user make list-like tabulars,
-i.e., a tabular that is indistinguishable from an itemize or
-enumerate environment. The advantage of using a tabular is that
-the user can add additional columns to each entry in the list.
+The listliketab package helps the user make list-like tabulars, i.e., a
+tabular that is indistinguishable from an itemize or enumerate
+environment. The advantage of using a tabular is that the user can add
+additional columns to each entry in the list.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/listliketab/listliketab.sty
-%doc %{_texmfdistdir}/doc/latex/listliketab/README
-%doc %{_texmfdistdir}/doc/latex/listliketab/listliketab.pdf
-#- source
-%doc %{_texmfdistdir}/source/latex/listliketab/listliketab.dtx
-%doc %{_texmfdistdir}/source/latex/listliketab/listliketab.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
